@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediConnect - Healthcare Services Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <!-- Accessibility Bar -->
+    <div class="accessibility-bar">
+        <div class="container">
+            <div class="accessibility-content">
+                <div class="language-selector">
+                    <span>Language:</span>
+                    <select id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+                <div class="font-size-selector">
+                    <span>Font Size:</span>
+                    <button id="fontDecrease">A-</button>
+                    <button id="fontReset">A</button>
+                    <button id="fontIncrease">A+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-hospital-alt" style="font-size: 2rem; color: var(--primary);"></i>
+                    <h1>MediConnect</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
+                        <li><a href="#" class="nav-link" data-page="resources">Resources</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-buttons">
+                    <a href="#" class="btn btn-outline" id="loginBtn">Login</a>
+                    <a href="#" class="btn btn-primary" id="registerBtn">Register</a>
+                    <a href="#" class="btn emergency-btn"><i class="fas fa-phone-alt"></i> Emergency</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <div class="container">
+                <div class="hero">
+                    <h2>Your Health, Our Priority</h2>
+                    <p>Access medical services, submit forms, and schedule appointments all in one place.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-light" id="formBtn">Submit Form</a>
+                        <a href="#" class="btn btn-light" id="appointmentBtn">Request Appointment</a>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <h2>How It Works</h2>
+                    <p>Simple steps to access the healthcare services you need</p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h3>Create Account</h3>
+                        <p>Register with your basic information to get started with our services.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <h3>Submit Forms</h3>
+                        <p>Fill out medical forms online or upload existing documents.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Schedule Appointment</h3>
+                        <p>Book appointments with healthcare professionals at your convenience.</p>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <h2>Our Services</h2>
+                    <p>Comprehensive healthcare solutions tailored to your needs</p>
+                </div>
+
+                <div class="services">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <h3>Medical Form Submission</h3>
+                        <p>Submit your medical forms digitally with easy-to-use interfaces.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-medical"></i>
+                        </div>
+                        <h3>Kiosk Services</h3>
+                        <p>Access our self-service kiosks at various locations for in-person support.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <h3>Call Support</h3>
+                        <p>Speak directly with our healthcare representatives for assistance.</p>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <h2>Success Stories</h2>
+                    <p>Hear from patients who have benefited from our services</p>
+                </div>
+
+                <div class="testimonials">
+                    <div class="testimonial-cards">
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-right"></i>
+                            <p class="testimonial-text">The online form submission saved me hours of waiting time. I could complete everything from home at my own pace.</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">JD</div>
+                                <div>
+                                    <h4>John Doe</h4>
+                                    <p>Patient</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-right"></i>
+                            <p class="testimonial-text">Scheduling appointments through the portal is so convenient. I received reminders and could reschedule easily when needed.</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">SM</div>
+                                <div>
+                                    <h4>Sarah Miller</h4>
+                                    <p>Patient</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-right"></i>
+                            <p class="testimonial-text">The multi-language support made it easy for my elderly parents to navigate the system and access healthcare services.</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">RJ</div>
+                                <div>
+                                    <h4>Robert Johnson</h4>
+                                    <p>Family Member</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trust-elements">
+                    <h3>Trusted By</h3>
+                    <div class="trust-logos">
+                        <div class="trust-logo">
+                            <i class="fas fa-building" style="font-size: 3rem;"></i>
+                            <p>HealthOrg</p>
+                        </div>
+                        <div class="trust-logo">
+                            <i class="fas fa-heartbeat" style="font-size: 3rem;"></i>
+                            <p>MediGroup</p>
+                        </div>
+                        <div class="trust-logo">
+                            <i class="fas fa-hospital" style="font-size: 3rem;"></i>
+                            <p>City Hospital</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login/Register Page -->
+        <div id="login" class="page">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Login to Your Account</h2>
+                    <p>Access your medical services dashboard</p>
+                </div>
+
+                <div class="form-container">
+                    <div class="success-message" id="loginSuccess">
+                        <i class="fas fa-check-circle"></i> Login successful! Redirecting to dashboard...
+                    </div>
+                    <div class="form-group" id="loginEmailGroup">
+                        <label for="loginEmail">Email or Phone Number</label>
+                        <input type="text" id="loginEmail" placeholder="Enter your email or phone number">
+                        <div class="error-message" id="loginEmailError">Please enter a valid email or phone number</div>
+                    </div>
+                    <div class="form-group" id="loginPasswordGroup">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter your password">
+                        <div class="error-message" id="loginPasswordError">Password is required</div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" id="loginSubmit">Login</button>
+                    <div class="spinner" id="loginSpinner"></div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <a href="#" style="color: var(--primary);">Forgot Password?</a>
+                        <p style="margin-top: 15px;">Don't have an account? <a href="#" id="goToRegister" style="color: var(--primary);">Register here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="register" class="page">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Create an Account</h2>
+                    <p>Register to access all our healthcare services</p>
+                </div>
+
+                <div class="form-container">
+                    <div class="success-message" id="registerSuccess">
+                        <i class="fas fa-check-circle"></i> Registration successful! You can now login to your account.
+                    </div>
+                    <div class="form-group" id="fullNameGroup">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" placeholder="Enter your full name">
+                        <div class="error-message" id="fullNameError">Please enter your full name</div>
+                    </div>
+                    <div class="form-group" id="emailGroup">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email address">
+                        <div class="error-message" id="emailError">Please enter a valid email address</div>
+                    </div>
+                    <div class="form-group" id="phoneGroup">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Enter your phone number">
+                        <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+                    </div>
+                    <div class="form-group" id="passwordGroup">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Create a password">
+                        <div class="error-message" id="passwordError">Password must be at least 8 characters</div>
+                    </div>
+                    <div class="form-group" id="confirmPasswordGroup">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm your password">
+                        <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" id="registerSubmit">Register</button>
+                    <div class="spinner" id="registerSpinner"></div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <p>Already have an account? <a href="#" id="goToLogin" style="color: var(--primary);">Login here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div id="dashboard" class="page">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Welcome, User</h2>
+                    <p>Your personal healthcare dashboard</p>
+                </div>
+
+                <div class="dashboard-cards">
+                    <div class="dashboard-card" id="submitFormCard">
+                        <i class="fas fa-file-medical"></i>
+                        <h3>Submit Medical Form</h3>
+                        <p>Fill out and submit medical forms</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <i class="fas fa-history"></i>
+                        <h3>View Past Submissions</h3>
+                        <p>Access your form history and reports</p>
+                    </div>
+                    <div class="dashboard-card" id="scheduleAppointmentCard">
+                        <i class="fas fa-calendar-plus"></i>
+                        <h3>Schedule Appointment</h3>
+                        <p>Book with healthcare professionals</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>Contact Support</h3>
+                        <p>Get help from our team</p>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <h2>Your Appointments</h2>
+                    <p>Upcoming and past medical appointments</p>
+                </div>
+
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <button class="btn btn-outline" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                        <h3 id="currentMonth">September 2023</h3>
+                        <button class="btn btn-outline" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Us Page -->
+        <div id="about" class="page">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About MediConnect</h2>
+                    <p>Transforming healthcare through digital innovation</p>
+                </div>
+                
+                <div class="hero" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);">
+                    <h2>Our Mission</h2>
+                    <p>To make healthcare services accessible, efficient, and patient-centered through technology</p>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Our Story</h3>
+                        <p>Founded in 2020, MediConnect emerged from a vision to bridge the gap between patients and healthcare providers through innovative digital solutions.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Our Team</h3>
+                        <p>We're a diverse team of healthcare professionals, technologists, and patient advocates working together to improve healthcare delivery.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Our Impact</h3>
+                        <p>To date, we've helped over 50,000 patients access care more efficiently and reduced administrative burden for hundreds of healthcare providers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resources Page -->
+        <div id="resources" class="page">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Healthcare Resources</h2>
+                    <p>Educational materials and helpful information</p>
+                </div>
+                
+                <div class="services">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-book-medical"></i>
+                        </div>
+                        <h3>Health Guides</h3>
+                        <p>Comprehensive guides on common health conditions, treatments, and preventive care.</p>
+                        <a href="#" class="btn btn-outline" style="margin-top: 15px;">View Guides</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Video Tutorials</h3>
+                        <p>Step-by-step videos showing how to use our platform and prepare for appointments.</p>
+                        <a href="#" class="btn btn-outline" style="margin-top: 15px;">Watch Videos</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-file-download"></i>
+                        </div>
+                        <h3>Download Forms</h3>
+                        <p>Access and download medical forms to complete offline before your visit.</p>
+                        <a href="#" class="btn btn-outline" style="margin-top: 15px;">Download</a>
+                    </div>
+                </div>
+                
+                <div class="section-title">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+                
+                <div class="form-container">
+                    <div class="step">
+                        <h3>How do I reset my password?</h3>
+                        <p>Click on the "Forgot Password" link on the login page and follow the instructions sent to your email.</p>
+                    </div>
+                    <div class="step" style="margin-top: 20px;">
+                        <h3>Can I schedule appointments for family members?</h3>
+                        <p>Yes, after creating your account, you can add family members and manage appointments for them.</p>
+                    </div>
+                    <div class="step" style="margin-top: 20px;">
+                        <h3>Is my medical information secure?</h3>
+                        <p>Absolutely. We use industry-standard encryption and comply with all healthcare privacy regulations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                    <p>We're here to help with any questions or concerns</p>
+                </div>
+                
+                <div class="services">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Call Us</h3>
+                        <p>+91 62002 02288</p>
+                        <p>Monday-Friday, 8am-6pm EST</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p>support@mediconnect.com</p>
+                        <p>We typically respond within 24 hours</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Visit Us</h3>
+                        <p>Kapurthala, Punjab</p>
+                        <p>Find our kiosk locations</p>
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                    <h3 style="text-align: center; margin-bottom: 20px;">Send us a Message</h3>
+                    <div class="form-group">
+                        <label for="contactName">Full Name</label>
+                        <input type="text" id="contactName" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address</label>
+                        <input type="email" id="contactEmail" placeholder="Enter your email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Subject</label>
+                        <input type="text" id="contactSubject" placeholder="What is this regarding?">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Appointment Modal -->
+        <div class="modal" id="appointmentModal">
+            <div class="modal-content">
+                <span class="modal-close" id="closeModal">&times;</span>
+                <h2>Schedule Appointment</h2>
+                <div class="form-group">
+                    <label for="appointmentType">Appointment Type</label>
+                    <select id="appointmentType">
+                        <option value="">Select appointment type</option>
+                        <option value="consultation">General Consultation</option>
+                        <option value="followup">Follow-up Visit</option>
+                        <option value="specialist">Specialist Consultation</option>
+                        <option value="test">Diagnostic Test</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointmentDate">Preferred Date</label>
+                    <input type="date" id="appointmentDate">
+                </div>
+                <div class="form-group">
+                    <label for="appointmentTime">Preferred Time</label>
+                    <select id="appointmentTime">
+                        <option value="">Select time</option>
+                        <option value="9:00">9:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="13:00">1:00 PM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="15:00">3:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointmentNotes">Notes (Optional)</label>
+                    <textarea id="appointmentNotes" placeholder="Any specific concerns or details..."></textarea>
+                </div>
+                <button class="btn btn-primary" style="width: 100%;" id="confirmAppointment">Schedule Appointment</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MediConnect</h3>
+                    <p>Providing accessible healthcare services through digital innovation.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
+                        <li><a href="#" class="nav-link" data-page="resources">Resources</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Form Submission</a></li>
+                        <li><a href="#">Appointment Scheduling</a></li>
+                        <li><a href="#">Call Support</a></li>
+                        <li><a href="#">Kiosk Locations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +1 (800) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@mediconnect.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Health St, Medical City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MediConnect. All rights reserved.</p>
+                <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
