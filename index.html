@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediConnect - Healthcare Services Portal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Accessibility Bar -->
@@ -13,16 +13,15 @@
         <div class="container">
             <div class="accessibility-content">
                 <div class="language-selector">
-                    <span>Language:</span>
+                    <span data-translate="language">Language:</span>
                     <select id="languageSelect">
                         <option value="en">English</option>
-                        <option value="es">Español</option>
-                        <option value="fr">Français</option>
-                        <option value="pa">Punjabi</option>
+                        <option value="hi">हिंदी (Hindi)</option>
+                        <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
                     </select>
                 </div>
                 <div class="font-size-selector">
-                    <span>Font Size:</span>
+                    <span data-translate="font_size">Font Size:</span>
                     <button id="fontDecrease">A-</button>
                     <button id="fontReset">A</button>
                     <button id="fontIncrease">A+</button>
@@ -37,20 +36,20 @@
             <div class="header-content">
                 <div class="logo">
                     <i class="fas fa-hospital-alt" style="font-size: 2rem; color: var(--primary);"></i>
-                    <h1>MediConnect</h1>
+                    <h1 data-translate="mediconnect">MediConnect</h1>
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#" class="nav-link" data-page="home">Home</a></li>
-                        <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
-                        <li><a href="#" class="nav-link" data-page="resources">Resources</a></li>
-                        <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                        <li><a href="#" class="nav-link" data-page="home" data-translate="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="about" data-translate="about_us">About Us</a></li>
+                        <li><a href="#" class="nav-link" data-page="resources" data-translate="resources">Resources</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact" data-translate="contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="nav-buttons">
-                    <a href="#" class="btn btn-outline" id="loginBtn">Login</a>
-                    <a href="#" class="btn btn-primary" id="registerBtn">Register</a>
-                    <a href="#" class="btn emergency-btn"><i class="fas fa-phone-alt"></i> Emergency</a>
+                    <a href="#" class="btn btn-outline" id="loginBtn" data-translate="login">Login</a>
+                    <a href="#" class="btn btn-primary" id="registerBtn" data-translate="register">Register</a>
+                    <a href="#" class="btn emergency-btn"><i class="fas fa-phone-alt"></i> <span data-translate="emergency">Emergency</span></a>
                 </div>
             </div>
         </div>
@@ -62,17 +61,17 @@
         <div id="home" class="page active">
             <div class="container">
                 <div class="hero">
-                    <h2>Your Health, Our Priority</h2>
-                    <p>Access medical services, submit forms, and schedule appointments all in one place.</p>
+                    <h2 data-translate="hero_title">Your Health, Our Priority</h2>
+                    <p data-translate="hero_description">Access medical services, submit forms, and schedule appointments all in one place.</p>
                     <div class="hero-buttons">
-                        <a href="#" class="btn btn-light" id="formBtn">Submit Form</a>
-                        <a href="#" class="btn btn-light" id="appointmentBtn">Request Appointment</a>
+                        <a href="#" class="btn btn-light" id="formBtn" data-translate="submit_form">Submit Form</a>
+                        <a href="#" class="btn btn-light" id="appointmentBtn" data-translate="request_appointment">Request Appointment</a>
                     </div>
                 </div>
 
                 <div class="section-title">
-                    <h2>How It Works</h2>
-                    <p>Simple steps to access the healthcare services you need</p>
+                    <h2 data-translate="how_it_works">How It Works</h2>
+                    <p data-translate="how_it_works_desc">Simple steps to access the healthcare services you need</p>
                 </div>
 
                 <div class="steps">
@@ -80,28 +79,28 @@
                         <div class="step-icon">
                             <i class="fas fa-user-plus"></i>
                         </div>
-                        <h3>Create Account</h3>
-                        <p>Register with your basic information to get started with our services.</p>
+                        <h3 data-translate="create_account">Create Account</h3>
+                        <p data-translate="create_account_desc">Register with your basic information to get started with our services.</p>
                     </div>
                     <div class="step">
                         <div class="step-icon">
                             <i class="fas fa-file-medical"></i>
                         </div>
-                        <h3>Submit Forms</h3>
-                        <p>Fill out medical forms online or upload existing documents.</p>
+                        <h3 data-translate="submit_forms">Submit Forms</h3>
+                        <p data-translate="submit_forms_desc">Fill out medical forms online or upload existing documents.</p>
                     </div>
                     <div class="step">
                         <div class="step-icon">
                             <i class="fas fa-calendar-check"></i>
                         </div>
-                        <h3>Schedule Appointment</h3>
-                        <p>Book appointments with healthcare professionals at your convenience.</p>
+                        <h3 data-translate="schedule_appointment">Schedule Appointment</h3>
+                        <p data-translate="schedule_appointment_desc">Book appointments with healthcare professionals at your convenience.</p>
                     </div>
                 </div>
 
                 <div class="section-title">
-                    <h2>Our Services</h2>
-                    <p>Comprehensive healthcare solutions tailored to your needs</p>
+                    <h2 data-translate="our_services">Our Services</h2>
+                    <p data-translate="our_services_desc">Comprehensive healthcare solutions tailored to your needs</p>
                 </div>
 
                 <div class="services">
@@ -109,62 +108,62 @@
                         <div class="service-icon">
                             <i class="fas fa-file-invoice"></i>
                         </div>
-                        <h3>Medical Form Submission</h3>
-                        <p>Submit your medical forms digitally with easy-to-use interfaces.</p>
+                        <h3 data-translate="medical_form_submission">Medical Form Submission</h3>
+                        <p data-translate="medical_form_submission_desc">Submit your medical forms digitally with easy-to-use interfaces.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-laptop-medical"></i>
                         </div>
-                        <h3>Kiosk Services</h3>
-                        <p>Access our self-service kiosks at various locations for in-person support.</p>
+                        <h3 data-translate="kiosk_services">Kiosk Services</h3>
+                        <p data-translate="kiosk_services_desc">Access our self-service kiosks at various locations for in-person support.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-phone-volume"></i>
                         </div>
-                        <h3>Call Support</h3>
-                        <p>Speak directly with our healthcare representatives for assistance.</p>
+                        <h3 data-translate="call_support">Call Support</h3>
+                        <p data-translate="call_support_desc">Speak directly with our healthcare representatives for assistance.</p>
                     </div>
                 </div>
 
                 <div class="section-title">
-                    <h2>Success Stories</h2>
-                    <p>Hear from patients who have benefited from our services</p>
+                    <h2 data-translate="success_stories">Success Stories</h2>
+                    <p data-translate="success_stories_desc">Hear from patients who have benefited from our services</p>
                 </div>
 
                 <div class="testimonials">
                     <div class="testimonial-cards">
                         <div class="testimonial-card">
                             <i class="fas fa-quote-right"></i>
-                            <p class="testimonial-text">The online form submission saved me hours of waiting time. I could complete everything from home at my own pace.</p>
+                            <p class="testimonial-text" data-translate="testimonial_1">The online form submission saved me hours of waiting time. I could complete everything from home at my own pace.</p>
                             <div class="testimonial-author">
                                 <div class="author-avatar">JD</div>
                                 <div>
                                     <h4>John Doe</h4>
-                                    <p>Patient</p>
+                                    <p data-translate="patient">Patient</p>
                                 </div>
                             </div>
                         </div>
                         <div class="testimonial-card">
                             <i class="fas fa-quote-right"></i>
-                            <p class="testimonial-text">Scheduling appointments through the portal is so convenient. I received reminders and could reschedule easily when needed.</p>
+                            <p class="testimonial-text" data-translate="testimonial_2">Scheduling appointments through the portal is so convenient. I received reminders and could reschedule easily when needed.</p>
                             <div class="testimonial-author">
                                 <div class="author-avatar">SM</div>
                                 <div>
                                     <h4>Sarah Miller</h4>
-                                    <p>Patient</p>
+                                    <p data-translate="patient">Patient</p>
                                 </div>
                             </div>
                         </div>
                         <div class="testimonial-card">
                             <i class="fas fa-quote-right"></i>
-                            <p class="testimonial-text">The multi-language support made it easy for my elderly parents to navigate the system and access healthcare services.</p>
+                            <p class="testimonial-text" data-translate="testimonial_3">The multi-language support made it easy for my elderly parents to navigate the system and access healthcare services.</p>
                             <div class="testimonial-author">
                                 <div class="author-avatar">RJ</div>
                                 <div>
                                     <h4>Robert Johnson</h4>
-                                    <p>Family Member</p>
+                                    <p data-translate="family_member">Family Member</p>
                                 </div>
                             </div>
                         </div>
@@ -172,7 +171,7 @@
                 </div>
 
                 <div class="trust-elements">
-                    <h3>Trusted By</h3>
+                    <h3 data-translate="trusted_by">Trusted By</h3>
                     <div class="trust-logos">
                         <div class="trust-logo">
                             <i class="fas fa-building" style="font-size: 3rem;"></i>
@@ -195,29 +194,29 @@
         <div id="login" class="page">
             <div class="container">
                 <div class="section-title">
-                    <h2>Login to Your Account</h2>
-                    <p>Access your medical services dashboard</p>
+                    <h2 data-translate="login_title">Login to Your Account</h2>
+                    <p data-translate="login_desc">Access your medical services dashboard</p>
                 </div>
 
                 <div class="form-container">
                     <div class="success-message" id="loginSuccess">
-                        <i class="fas fa-check-circle"></i> Login successful! Redirecting to dashboard...
+                        <i class="fas fa-check-circle"></i> <span data-translate="login_success">Login successful! Redirecting to dashboard...</span>
                     </div>
                     <div class="form-group" id="loginEmailGroup">
-                        <label for="loginEmail">Email or Phone Number</label>
-                        <input type="text" id="loginEmail" placeholder="Enter your email or phone number">
-                        <div class="error-message" id="loginEmailError">Please enter a valid email or phone number</div>
+                        <label for="loginEmail" data-translate="email_phone">Email or Phone Number</label>
+                        <input type="text" id="loginEmail" data-translate="enter_email_phone" placeholder="Enter your email or phone number">
+                        <div class="error-message" id="loginEmailError" data-translate="email_phone_error">Please enter a valid email or phone number</div>
                     </div>
                     <div class="form-group" id="loginPasswordGroup">
-                        <label for="loginPassword">Password</label>
-                        <input type="password" id="loginPassword" placeholder="Enter your password">
-                        <div class="error-message" id="loginPasswordError">Password is required</div>
+                        <label for="loginPassword" data-translate="password">Password</label>
+                        <input type="password" id="loginPassword" data-translate="enter_password" placeholder="Enter your password">
+                        <div class="error-message" id="loginPasswordError" data-translate="password_error">Password is required</div>
                     </div>
-                    <button class="btn btn-primary" style="width: 100%;" id="loginSubmit">Login</button>
+                    <button class="btn btn-primary" style="width: 100%;" id="loginSubmit" data-translate="login">Login</button>
                     <div class="spinner" id="loginSpinner"></div>
                     <div style="text-align: center; margin-top: 15px;">
-                        <a href="#" style="color: var(--primary);">Forgot Password?</a>
-                        <p style="margin-top: 15px;">Don't have an account? <a href="#" id="goToRegister" style="color: var(--primary);">Register here</a></p>
+                        <a href="#" style="color: var(--primary);" data-translate="forgot_password">Forgot Password?</a>
+                        <p style="margin-top: 15px;" data-translate="no_account">Don't have an account? <a href="#" id="goToRegister" style="color: var(--primary);" data-translate="register_here">Register here</a></p>
                     </div>
                 </div>
             </div>
@@ -226,43 +225,43 @@
         <div id="register" class="page">
             <div class="container">
                 <div class="section-title">
-                    <h2>Create an Account</h2>
-                    <p>Register to access all our healthcare services</p>
+                    <h2 data-translate="register_title">Create an Account</h2>
+                    <p data-translate="register_desc">Register to access all our healthcare services</p>
                 </div>
 
                 <div class="form-container">
                     <div class="success-message" id="registerSuccess">
-                        <i class="fas fa-check-circle"></i> Registration successful! You can now login to your account.
+                        <i class="fas fa-check-circle"></i> <span data-translate="register_success">Registration successful! You can now login to your account.</span>
                     </div>
                     <div class="form-group" id="fullNameGroup">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" placeholder="Enter your full name">
-                        <div class="error-message" id="fullNameError">Please enter your full name</div>
+                        <label for="fullName" data-translate="full_name">Full Name</label>
+                        <input type="text" id="fullName" data-translate="enter_full_name" placeholder="Enter your full name">
+                        <div class="error-message" id="fullNameError" data-translate="full_name_error">Please enter your full name</div>
                     </div>
                     <div class="form-group" id="emailGroup">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="Enter your email address">
-                        <div class="error-message" id="emailError">Please enter a valid email address</div>
+                        <label for="email" data-translate="email">Email Address</label>
+                        <input type="email" id="email" data-translate="enter_email" placeholder="Enter your email address">
+                        <div class="error-message" id="emailError" data-translate="email_error">Please enter a valid email address</div>
                     </div>
                     <div class="form-group" id="phoneGroup">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" placeholder="Enter your phone number">
-                        <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+                        <label for="phone" data-translate="phone">Phone Number</label>
+                        <input type="tel" id="phone" data-translate="enter_phone" placeholder="Enter your phone number">
+                        <div class="error-message" id="phoneError" data-translate="phone_error">Please enter a valid phone number</div>
                     </div>
                     <div class="form-group" id="passwordGroup">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Create a password">
-                        <div class="error-message" id="passwordError">Password must be at least 8 characters</div>
+                        <label for="password" data-translate="password">Password</label>
+                        <input type="password" id="password" data-translate="create_password" placeholder="Create a password">
+                        <div class="error-message" id="passwordError" data-translate="password_length_error">Password must be at least 8 characters</div>
                     </div>
                     <div class="form-group" id="confirmPasswordGroup">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" id="confirmPassword" placeholder="Confirm your password">
-                        <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+                        <label for="confirmPassword" data-translate="confirm_password">Confirm Password</label>
+                        <input type="password" id="confirmPassword" data-translate="confirm_password_placeholder" placeholder="Confirm your password">
+                        <div class="error-message" id="confirmPasswordError" data-translate="password_match_error">Passwords do not match</div>
                     </div>
-                    <button class="btn btn-primary" style="width: 100%;" id="registerSubmit">Register</button>
+                    <button class="btn btn-primary" style="width: 100%;" id="registerSubmit" data-translate="register">Register</button>
                     <div class="spinner" id="registerSpinner"></div>
                     <div style="text-align: center; margin-top: 15px;">
-                        <p>Already have an account? <a href="#" id="goToLogin" style="color: var(--primary);">Login here</a></p>
+                        <p data-translate="have_account">Already have an account? <a href="#" id="goToLogin" style="color: var(--primary);" data-translate="login_here">Login here</a></p>
                     </div>
                 </div>
             </div>
@@ -272,36 +271,36 @@
         <div id="dashboard" class="page">
             <div class="container">
                 <div class="section-title">
-                    <h2>Welcome, User</h2>
-                    <p>Your personal healthcare dashboard</p>
+                    <h2 data-translate="welcome">Welcome, User</h2>
+                    <p data-translate="dashboard_desc">Your personal healthcare dashboard</p>
                 </div>
 
                 <div class="dashboard-cards">
                     <div class="dashboard-card" id="submitFormCard">
                         <i class="fas fa-file-medical"></i>
-                        <h3>Submit Medical Form</h3>
-                        <p>Fill out and submit medical forms</p>
+                        <h3 data-translate="submit_medical_form">Submit Medical Form</h3>
+                        <p data-translate="submit_medical_form_desc">Fill out and submit medical forms</p>
                     </div>
                     <div class="dashboard-card">
                         <i class="fas fa-history"></i>
-                        <h3>View Past Submissions</h3>
-                        <p>Access your form history and reports</p>
+                        <h3 data-translate="view_submissions">View Past Submissions</h3>
+                        <p data-translate="view_submissions_desc">Access your form history and reports</p>
                     </div>
                     <div class="dashboard-card" id="scheduleAppointmentCard">
                         <i class="fas fa-calendar-plus"></i>
-                        <h3>Schedule Appointment</h3>
-                        <p>Book with healthcare professionals</p>
+                        <h3 data-translate="schedule_appointment">Schedule Appointment</h3>
+                        <p data-translate="schedule_appointment_desc_dash">Book with healthcare professionals</p>
                     </div>
                     <div class="dashboard-card">
                         <i class="fas fa-headset"></i>
-                        <h3>Contact Support</h3>
-                        <p>Get help from our team</p>
+                        <h3 data-translate="contact_support">Contact Support</h3>
+                        <p data-translate="contact_support_desc">Get help from our team</p>
                     </div>
                 </div>
 
                 <div class="section-title">
-                    <h2>Your Appointments</h2>
-                    <p>Upcoming and past medical appointments</p>
+                    <h2 data-translate="your_appointments">Your Appointments</h2>
+                    <p data-translate="appointments_desc">Upcoming and past medical appointments</p>
                 </div>
 
                 <div class="calendar">
@@ -321,13 +320,13 @@
         <div id="about" class="page">
             <div class="container">
                 <div class="section-title">
-                    <h2>About MediConnect</h2>
-                    <p>Transforming healthcare through digital innovation</p>
+                    <h2 data-translate="about_title">About MediConnect</h2>
+                    <p data-translate="about_desc">Transforming healthcare through digital innovation</p>
                 </div>
                 
                 <div class="hero" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);">
-                    <h2>Our Mission</h2>
-                    <p>To make healthcare services accessible, efficient, and patient-centered through technology</p>
+                    <h2 data-translate="our_mission">Our Mission</h2>
+                    <p data-translate="mission_desc">To make healthcare services accessible, efficient, and patient-centered through technology</p>
                 </div>
                 
                 <div class="steps">
@@ -335,22 +334,22 @@
                         <div class="step-icon">
                             <i class="fas fa-rocket"></i>
                         </div>
-                        <h3>Our Story</h3>
-                        <p>Founded in 2020, MediConnect emerged from a vision to bridge the gap between patients and healthcare providers through innovative digital solutions.</p>
+                        <h3 data-translate="our_story">Our Story</h3>
+                        <p data-translate="our_story_desc">Founded in 2020, MediConnect emerged from a vision to bridge the gap between patients and healthcare providers through innovative digital solutions.</p>
                     </div>
                     <div class="step">
                         <div class="step-icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <h3>Our Team</h3>
-                        <p>We're a diverse team of healthcare professionals, technologists, and patient advocates working together to improve healthcare delivery.</p>
+                        <h3 data-translate="our_team">Our Team</h3>
+                        <p data-translate="our_team_desc">We're a diverse team of healthcare professionals, technologists, and patient advocates working together to improve healthcare delivery.</p>
                     </div>
                     <div class="step">
                         <div class="step-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
-                        <h3>Our Impact</h3>
-                        <p>To date, we've helped over 50,000 patients access care more efficiently and reduced administrative burden for hundreds of healthcare providers.</p>
+                        <h3 data-translate="our_impact">Our Impact</h3>
+                        <p data-translate="our_impact_desc">To date, we've helped over 50,000 patients access care more efficiently and reduced administrative burden for hundreds of healthcare providers.</p>
                     </div>
                 </div>
             </div>
@@ -360,8 +359,8 @@
         <div id="resources" class="page">
             <div class="container">
                 <div class="section-title">
-                    <h2>Healthcare Resources</h2>
-                    <p>Educational materials and helpful information</p>
+                    <h2 data-translate="resources_title">Healthcare Resources</h2>
+                    <p data-translate="resources_desc">Educational materials and helpful information</p>
                 </div>
                 
                 <div class="services">
@@ -369,44 +368,44 @@
                         <div class="service-icon">
                             <i class="fas fa-book-medical"></i>
                         </div>
-                        <h3>Health Guides</h3>
-                        <p>Comprehensive guides on common health conditions, treatments, and preventive care.</p>
-                        <a href="#" class="btn btn-outline" style="margin-top: 15px;">View Guides</a>
+                        <h3 data-translate="health_guides">Health Guides</h3>
+                        <p data-translate="health_guides_desc">Comprehensive guides on common health conditions, treatments, and preventive care.</p>
+                        <a href="#" class="btn btn-outline" style="margin-top: 15px;" data-translate="view_guides">View Guides</a>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-video"></i>
                         </div>
-                        <h3>Video Tutorials</h3>
-                        <p>Step-by-step videos showing how to use our platform and prepare for appointments.</p>
-                        <a href="#" class="btn btn-outline" style="margin-top: 15px;">Watch Videos</a>
+                        <h3 data-translate="video_tutorials">Video Tutorials</h3>
+                        <p data-translate="video_tutorials_desc">Step-by-step videos showing how to use our platform and prepare for appointments.</p>
+                        <a href="#" class="btn btn-outline" style="margin-top: 15px;" data-translate="watch_videos">Watch Videos</a>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-file-download"></i>
                         </div>
-                        <h3>Download Forms</h3>
-                        <p>Access and download medical forms to complete offline before your visit.</p>
-                        <a href="#" class="btn btn-outline" style="margin-top: 15px;">Download</a>
+                        <h3 data-translate="download_forms">Download Forms</h3>
+                        <p data-translate="download_forms_desc">Access and download medical forms to complete offline before your visit.</p>
+                        <a href="#" class="btn btn-outline" style="margin-top: 15px;" data-translate="download">Download</a>
                     </div>
                 </div>
                 
                 <div class="section-title">
-                    <h2>Frequently Asked Questions</h2>
+                    <h2 data-translate="faq">Frequently Asked Questions</h2>
                 </div>
                 
                 <div class="form-container">
                     <div class="step">
-                        <h3>How do I reset my password?</h3>
-                        <p>Click on the "Forgot Password" link on the login page and follow the instructions sent to your email.</p>
+                        <h3 data-translate="faq_1_q">How do I reset my password?</h3>
+                        <p data-translate="faq_1_a">Click on the "Forgot Password" link on the login page and follow the instructions sent to your email.</p>
                     </div>
                     <div class="step" style="margin-top: 20px;">
-                        <h3>Can I schedule appointments for family members?</h3>
-                        <p>Yes, after creating your account, you can add family members and manage appointments for them.</p>
+                        <h3 data-translate="faq_2_q">Can I schedule appointments for family members?</h3>
+                        <p data-translate="faq_2_a">Yes, after creating your account, you can add family members and manage appointments for them.</p>
                     </div>
                     <div class="step" style="margin-top: 20px;">
-                        <h3>Is my medical information secure?</h3>
-                        <p>Absolutely. We use industry-standard encryption and comply with all healthcare privacy regulations.</p>
+                        <h3 data-translate="faq_3_q">Is my medical information secure?</h3>
+                        <p data-translate="faq_3_a">Absolutely. We use industry-standard encryption and comply with all healthcare privacy regulations.</p>
                     </div>
                 </div>
             </div>
@@ -416,8 +415,8 @@
         <div id="contact" class="page">
             <div class="container">
                 <div class="section-title">
-                    <h2>Contact Us</h2>
-                    <p>We're here to help with any questions or concerns</p>
+                    <h2 data-translate="contact_title">Contact Us</h2>
+                    <p data-translate="contact_desc">We're here to help with any questions or concerns</p>
                 </div>
                 
                 <div class="services">
@@ -425,47 +424,47 @@
                         <div class="service-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <h3>Call Us</h3>
+                        <h3 data-translate="call_us">Call Us</h3>
                         <p>+91 62002 02288</p>
-                        <p>Monday-Friday, 8am-6pm EST</p>
+                        <p data-translate="call_hours">Monday-Friday, 8am-6pm EST</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <h3>Email Us</h3>
+                        <h3 data-translate="email_us">Email Us</h3>
                         <p>support@mediconnect.com</p>
-                        <p>We typically respond within 24 hours</p>
+                        <p data-translate="email_response">We typically respond within 24 hours</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <h3>Visit Us</h3>
-                        <p>Kapurthala, Punjab</p>
-                        <p>Find our kiosk locations</p>
+                        <h3 data-translate="visit_us">Visit Us</h3>
+                        <p>Kapurthala,Punjab</p>
+                        <p data-translate="find_kiosk">Find our kiosk locations</p>
                     </div>
                 </div>
                 
                 <div class="form-container">
-                    <h3 style="text-align: center; margin-bottom: 20px;">Send us a Message</h3>
+                    <h3 style="text-align: center; margin-bottom: 20px;" data-translate="send_message">Send us a Message</h3>
                     <div class="form-group">
-                        <label for="contactName">Full Name</label>
-                        <input type="text" id="contactName" placeholder="Enter your full name">
+                        <label for="contactName" data-translate="full_name">Full Name</label>
+                        <input type="text" id="contactName" data-translate="enter_full_name" placeholder="Enter your full name">
                     </div>
                     <div class="form-group">
-                        <label for="contactEmail">Email Address</label>
-                        <input type="email" id="contactEmail" placeholder="Enter your email address">
+                        <label for="contactEmail" data-translate="email">Email Address</label>
+                        <input type="email" id="contactEmail" data-translate="enter_email" placeholder="Enter your email address">
                     </div>
                     <div class="form-group">
-                        <label for="contactSubject">Subject</label>
-                        <input type="text" id="contactSubject" placeholder="What is this regarding?">
+                        <label for="contactSubject" data-translate="subject">Subject</label>
+                        <input type="text" id="contactSubject" data-translate="subject_placeholder" placeholder="What is this regarding?">
                     </div>
                     <div class="form-group">
-                        <label for="contactMessage">Message</label>
-                        <textarea id="contactMessage" placeholder="How can we help you?"></textarea>
+                        <label for="contactMessage" data-translate="message">Message</label>
+                        <textarea id="contactMessage" data-translate="message_placeholder" placeholder="How can we help you?"></textarea>
                     </div>
-                    <button class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    <button class="btn btn-primary" style="width: 100%;" data-translate="send_message">Send Message</button>
                 </div>
             </div>
         </div>
@@ -474,25 +473,25 @@
         <div class="modal" id="appointmentModal">
             <div class="modal-content">
                 <span class="modal-close" id="closeModal">&times;</span>
-                <h2>Schedule Appointment</h2>
+                <h2 data-translate="schedule_appointment">Schedule Appointment</h2>
                 <div class="form-group">
-                    <label for="appointmentType">Appointment Type</label>
+                    <label for="appointmentType" data-translate="appointment_type">Appointment Type</label>
                     <select id="appointmentType">
-                        <option value="">Select appointment type</option>
-                        <option value="consultation">General Consultation</option>
-                        <option value="followup">Follow-up Visit</option>
-                        <option value="specialist">Specialist Consultation</option>
-                        <option value="test">Diagnostic Test</option>
+                        <option value="" data-translate="select_appointment_type">Select appointment type</option>
+                        <option value="consultation" data-translate="general_consultation">General Consultation</option>
+                        <option value="followup" data-translate="follow_up">Follow-up Visit</option>
+                        <option value="specialist" data-translate="specialist_consultation">Specialist Consultation</option>
+                        <option value="test" data-translate="diagnostic_test">Diagnostic Test</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="appointmentDate">Preferred Date</label>
+                    <label for="appointmentDate" data-translate="preferred_date">Preferred Date</label>
                     <input type="date" id="appointmentDate">
                 </div>
                 <div class="form-group">
-                    <label for="appointmentTime">Preferred Time</label>
+                    <label for="appointmentTime" data-translate="preferred_time">Preferred Time</label>
                     <select id="appointmentTime">
-                        <option value="">Select time</option>
+                        <option value="" data-translate="select_time">Select time</option>
                         <option value="9:00">9:00 AM</option>
                         <option value="10:00">10:00 AM</option>
                         <option value="11:00">11:00 AM</option>
@@ -502,10 +501,10 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="appointmentNotes">Notes (Optional)</label>
-                    <textarea id="appointmentNotes" placeholder="Any specific concerns or details..."></textarea>
+                    <label for="appointmentNotes" data-translate="notes">Notes (Optional)</label>
+                    <textarea id="appointmentNotes" data-translate="notes_placeholder" placeholder="Any specific concerns or details..."></textarea>
                 </div>
-                <button class="btn btn-primary" style="width: 100%;" id="confirmAppointment">Schedule Appointment</button>
+                <button class="btn btn-primary" style="width: 100%;" id="confirmAppointment" data-translate="schedule_appointment">Schedule Appointment</button>
             </div>
         </div>
     </main>
@@ -515,8 +514,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>MediConnect</h3>
-                    <p>Providing accessible healthcare services through digital innovation.</p>
+                    <h3 data-translate="mediconnect">MediConnect</h3>
+                    <p data-translate="footer_mission">Providing accessible healthcare services through digital innovation.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -525,35 +524,35 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3 data-translate="quick_links">Quick Links</h3>
                     <ul>
-                        <li><a href="#" class="nav-link" data-page="home">Home</a></li>
-                        <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
-                        <li><a href="#" class="nav-link" data-page="resources">Resources</a></li>
-                        <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                        <li><a href="#" class="nav-link" data-page="home" data-translate="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="about" data-translate="about_us">About Us</a></li>
+                        <li><a href="#" class="nav-link" data-page="resources" data-translate="resources">Resources</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact" data-translate="contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Services</h3>
+                    <h3 data-translate="services">Services</h3>
                     <ul>
-                        <li><a href="#">Form Submission</a></li>
-                        <li><a href="#">Appointment Scheduling</a></li>
-                        <li><a href="#">Call Support</a></li>
-                        <li><a href="#">Kiosk Locations</a></li>
+                        <li><a href="#" data-translate="form_submission">Form Submission</a></li>
+                        <li><a href="#" data-translate="appointment_scheduling">Appointment Scheduling</a></li>
+                        <li><a href="#" data-translate="call_support">Call Support</a></li>
+                        <li><a href="#" data-translate="kiosk_locations">Kiosk Locations</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
+                    <h3 data-translate="contact_us">Contact Us</h3>
                     <ul>
                         <li><i class="fas fa-phone"></i> +91 62002 02288</li>
                         <li><i class="fas fa-envelope"></i> support@mediconnect.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Kapurthala, Punjab</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-translate="footer_address">Kapurthala,Punjab</span></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 MediConnect. All rights reserved.</p>
-                <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+                <p>&copy; 2023 MediConnect. <span data-translate="all_rights_reserved">All rights reserved.</span></p>
+                <p><a href="#" data-translate="privacy_policy">Privacy Policy</a> | <a href="#" data-translate="terms_of_use">Terms of Use</a></p>
             </div>
         </div>
     </footer>

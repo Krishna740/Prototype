@@ -1,303 +1,174 @@
-        // Current user state
-        let currentUser = null;
-        let currentDate = new Date(2023, 8, 1); // September 2023
-        
-        // Page Navigation
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const pageId = this.getAttribute('data-page');
-                showPage(pageId);
-            });
-        });
 
-        // Button event handlers
-        document.getElementById('loginBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-            showPage('login');
-        });
-
-        document.getElementById('registerBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-            showPage('register');
-        });
-
-        document.getElementById('formBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-            // In a real app, would check if user is logged in first
-            showPage('dashboard');
-        });
-
-        document.getElementById('appointmentBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-            // In a real app, would check if user is logged in first
-            showPage('dashboard');
-        });
-
-        document.getElementById('goToRegister').addEventListener('click', function(e) {
-            e.preventDefault();
-            showPage('register');
-        });
-
-        document.getElementById('goToLogin').addEventListener('click', function(e) {
-            e.preventDefault();
-            showPage('login');
-        });
-
-        // Show the specified page and hide all others
-        function showPage(pageId) {
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            document.getElementById(pageId).classList.add('active');
-            
-            // If showing dashboard, render the calendar
-            if (pageId === 'dashboard') {
-                renderCalendar();
-            }
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-
-        // Font size adjustment
-        document.getElementById('fontIncrease').addEventListener('click', function() {
-            changeFontSize(1);
-        });
-
-        document.getElementById('fontDecrease').addEventListener('click', function() {
-            changeFontSize(-1);
-        });
-
-        document.getElementById('fontReset').addEventListener('click', function() {
-            document.body.style.fontSize = '';
-        });
-
-        function changeFontSize(direction) {
-            const currentSize = parseFloat(getComputedStyle(document.body).fontSize);
-            document.body.style.fontSize = `${currentSize + direction}px`;
-        }
-
-        // Language selection
-        document.getElementById('languageSelect').addEventListener('change', function() {
-            // In a real application, this would change the language of the content
-            alert(`Language changed to ${this.options[this.selectedIndex].text}`);
-        });
-
-        // Form validation
-        document.getElementById('loginSubmit').addEventListener('click', function() {
-            let isValid = true;
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-            
-            // Validate email/phone
-            if (!email) {
-                document.getElementById('loginEmailGroup').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('loginEmailGroup').classList.remove('error');
-            }
-            
-            // Validate password
-            if (!password) {
-                document.getElementById('loginPasswordGroup').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('loginPasswordGroup').classList.remove('error');
-            }
-            
-            if (isValid) {
-                // Show loading spinner
-                document.getElementById('loginSpinner').style.display = 'block';
-                
-                // Simulate login process
-                setTimeout(function() {
-                    document.getElementById('loginSpinner').style.display = 'none';
-                    document.getElementById('loginSuccess').style.display = 'block';
-                    
-                    // Set current user
-                    currentUser = {
-                        name: "John Doe",
-                        email: email
-                    };
-                    
-                    // Redirect to dashboard after success
-                    setTimeout(function() {
-                        showPage('dashboard');
-                    }, 1500);
-                }, 2000);
-            }
-        });
-        
-        document.getElementById('registerSubmit').addEventListener('click', function() {
-            let isValid = true;
-            const fullName = document.getElementById('fullName').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            
-            // Validate full name
-            if (!fullName) {
-                document.getElementById('fullNameGroup').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('fullNameGroup').classList.remove('error');
-            }
-            
-            // Validate email
-            if (!email || !email.includes('@')) {
-                document.getElementById('emailGroup').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('emailGroup').classList.remove('error');
-            }
-            
-            // Validate phone
-            if (!phone || phone.length < 10) {
-                document.getElementById('phoneGroup').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('phoneGroup').classList.remove('error');
-            }
-            
-            // Validate password
-            if (!password || password.length < 8) {
-                document.getElementById('passwordGroup').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('passwordGroup').classList.remove('error');
-            }
-            
-            // Validate confirm password
-            if (password !== confirmPassword) {
-                document.getElementById('confirmPasswordGroup').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('confirmPasswordGroup').classList.remove('error');
-            }
-            
-            if (isValid) {
-                // Show loading spinner
-                document.getElementById('registerSpinner').style.display = 'block';
-                
-                // Simulate registration process
-                setTimeout(function() {
-                    document.getElementById('registerSpinner').style.display = 'none';
-                    document.getElementById('registerSuccess').style.display = 'block';
-                    
-                    // Redirect to login after success
-                    setTimeout(function() {
-                        showPage('login');
-                    }, 2000);
-                }, 2000);
-            }
-        });
-        
-        // Calendar functionality
-        function renderCalendar() {
-            const calendarGrid = document.getElementById('calendarGrid');
-            const monthYearElement = document.getElementById('currentMonth');
-            
-            // Clear previous calendar
-            calendarGrid.innerHTML = '';
-            
-            // Set month/year header
-            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-            monthYearElement.textContent = `${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
-            
-            // Add day headers
-            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-            days.forEach(day => {
-                const dayElement = document.createElement('div');
-                dayElement.className = 'calendar-day';
-                dayElement.textContent = day;
-                calendarGrid.appendChild(dayElement);
-            });
-            
-            // Get first day of month and number of days
-            const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
-            const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
-            
-            // Add empty cells for days before the first day of the month
-            for (let i = 0; i < firstDay; i++) {
-                const emptyDay = document.createElement('div');
-                emptyDay.className = 'calendar-day';
-                calendarGrid.appendChild(emptyDay);
-            }
-            
-            // Add cells for each day of the month
-            for (let i = 1; i <= daysInMonth; i++) {
-                const dayElement = document.createElement('div');
-                dayElement.className = 'calendar-day';
-                dayElement.textContent = i;
-                
-                // Mark today (if applicable)
-                const today = new Date();
-                if (currentDate.getMonth() === today.getMonth() && 
-                    currentDate.getFullYear() === today.getFullYear() && 
-                    i === today.getDate()) {
-                    dayElement.classList.add('active');
-                }
-                
-                // Randomly mark some days as having appointments (for demo)
-                if (Math.random() > 0.7) {
-                    dayElement.classList.add('has-appointment');
-                }
-                
-                calendarGrid.appendChild(dayElement);
-            }
-        }
-        
-        // Calendar navigation
-        document.getElementById('prevMonth').addEventListener('click', function() {
-            currentDate.setMonth(currentDate.getMonth() - 1);
-            renderCalendar();
-        });
-        
-        document.getElementById('nextMonth').addEventListener('click', function() {
-            currentDate.setMonth(currentDate.getMonth() + 1);
-            renderCalendar();
-        });
-        
-        // Appointment modal
-        document.getElementById('scheduleAppointmentCard').addEventListener('click', function() {
-            document.getElementById('appointmentModal').classList.add('active');
-        });
-        
-        document.getElementById('submitFormCard').addEventListener('click', function() {
-            alert('Form submission feature would open here.');
-        });
-        
-        document.getElementById('closeModal').addEventListener('click', function() {
-            document.getElementById('appointmentModal').classList.remove('active');
-        });
-        
-        document.getElementById('confirmAppointment').addEventListener('click', function() {
-            const type = document.getElementById('appointmentType').value;
-            const date = document.getElementById('appointmentDate').value;
-            const time = document.getElementById('appointmentTime').value;
-            
-            if (!type || !date || !time) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Show success message
-            alert(`Appointment scheduled for ${date} at ${time}!`);
-            
-            // Close modal
-            document.getElementById('appointmentModal').classList.remove('active');
-            
-            // Reset form
-            document.getElementById('appointmentType').value = '';
-            document.getElementById('appointmentDate').value = '';
-            document.getElementById('appointmentTime').value = '';
-            document.getElementById('appointmentNotes').value = '';
-        });
-        
-        // Initialize calendar on page load
-        window.addEventListener('load', function() {
-            renderCalendar();
-        });
+        // Language translations
+        const translations = {
+            'en': {
+                'language': 'Language:',
+                'font_size': 'Font Size:',
+                'mediconnect': 'MediConnect',
+                'home': 'Home',
+                'about_us': 'About Us',
+                'resources': 'Resources',
+                'contact': 'Contact',
+                'login': 'Login',
+                'register': 'Register',
+                'emergency': 'Emergency',
+                'hero_title': 'Your Health, Our Priority',
+                'hero_description': 'Access medical services, submit forms, and schedule appointments all in one place.',
+                'submit_form': 'Submit Form',
+                'request_appointment': 'Request Appointment',
+                'how_it_works': 'How It Works',
+                'how_it_works_desc': 'Simple steps to access the healthcare services you need',
+                'create_account': 'Create Account',
+                'create_account_desc': 'Register with your basic information to get started with our services.',
+                'submit_forms': 'Submit Forms',
+                'submit_forms_desc': 'Fill out medical forms online or upload existing documents.',
+                'schedule_appointment': 'Schedule Appointment',
+                'schedule_appointment_desc': 'Book appointments with healthcare professionals at your convenience.',
+                'our_services': 'Our Services',
+                'our_services_desc': 'Comprehensive healthcare solutions tailored to your needs',
+                'medical_form_submission': 'Medical Form Submission',
+                'medical_form_submission_desc': 'Submit your medical forms digitally with easy-to-use interfaces.',
+                'kiosk_services': 'Kiosk Services',
+                'kiosk_services_desc': 'Access our self-service kiosks at various locations for in-person support.',
+                'call_support': 'Call Support',
+                'call_support_desc': 'Speak directly with our healthcare representatives for assistance.',
+                'success_stories': 'Success Stories',
+                'success_stories_desc': 'Hear from patients who have benefited from our services',
+                'testimonial_1': 'The online form submission saved me hours of waiting time. I could complete everything from home at my own pace.',
+                'testimonial_2': 'Scheduling appointments through the portal is so convenient. I received reminders and could reschedule easily when needed.',
+                'testimonial_3': 'The multi-language support made it easy for my elderly parents to navigate the system and access healthcare services.',
+                'patient': 'Patient',
+                'family_member': 'Family Member',
+                'trusted_by': 'Trusted By',
+                'login_title': 'Login to Your Account',
+                'login_desc': 'Access your medical services dashboard',
+                'login_success': 'Login successful! Redirecting to dashboard...',
+                'email_phone': 'Email or Phone Number',
+                'enter_email_phone': 'Enter your email or phone number',
+                'email_phone_error': 'Please enter a valid email or phone number',
+                'password': 'Password',
+                'enter_password': 'Enter your password',
+                'password_error': 'Password is required',
+                'forgot_password': 'Forgot Password?',
+                'no_account': 'Don\'t have an account?',
+                'register_here': 'Register here',
+                'register_title': 'Create an Account',
+                'register_desc': 'Register to access all our healthcare services',
+                'register_success': 'Registration successful! You can now login to your account.',
+                'full_name': 'Full Name',
+                'enter_full_name': 'Enter your full name',
+                'full_name_error': 'Please enter your full name',
+                'email': 'Email Address',
+                'enter_email': 'Enter your email address',
+                'email_error': 'Please enter a valid email address',
+                'phone': 'Phone Number',
+                'enter_phone': 'Enter your phone number',
+                'phone_error': 'Please enter a valid phone number',
+                'create_password': 'Create a password',
+                'password_length_error': 'Password must be at least 8 characters',
+                'confirm_password': 'Confirm Password',
+                'confirm_password_placeholder': 'Confirm your password',
+                'password_match_error': 'Passwords do not match',
+                'have_account': 'Already have an account?',
+                'login_here': 'Login here',
+                'welcome': 'Welcome, John Doe',
+                'dashboard_desc': 'Your personal healthcare dashboard',
+                'submit_medical_form': 'Submit Medical Form',
+                'submit_medical_form_desc': 'Fill out and submit medical forms',
+                'view_submissions': 'View Past Submissions',
+                'view_submissions_desc': 'Access your form history and reports',
+                'schedule_appointment_desc_dash': 'Book with healthcare professionals',
+                'contact_support': 'Contact Support',
+                'contact_support_desc': 'Get help from our team',
+                'your_appointments': 'Your Appointments',
+                'appointments_desc': 'Upcoming and past medical appointments',
+                'about_title': 'About MediConnect',
+                'about_desc': 'Transforming healthcare through digital innovation',
+                'our_mission': 'Our Mission',
+                'mission_desc': 'To make healthcare services accessible, efficient, and patient-centered through technology',
+                'our_story': 'Our Story',
+                'our_story_desc': 'Founded in 2020, MediConnect emerged from a vision to bridge the gap between patients and healthcare providers through innovative digital solutions.',
+                'our_team': 'Our Team',
+                'our_team_desc': 'We\'re a diverse team of healthcare professionals, technologists, and patient advocates working together to improve healthcare delivery.',
+                'our_impact': 'Our Impact',
+                'our_impact_desc': 'To date, we\'ve helped over 50,000 patients access care more efficiently and reduced administrative burden for hundreds of healthcare providers.',
+                'resources_title': 'Healthcare Resources',
+                'resources_desc': 'Educational materials and helpful information',
+                'health_guides': 'Health Guides',
+                'health_guides_desc': 'Comprehensive guides on common health conditions, treatments, and preventive care.',
+                'view_guides': 'View Guides',
+                'video_tutorials': 'Video Tutorials',
+                'video_tutorials_desc': 'Step-by-step videos showing how to use our platform and prepare for appointments.',
+                'watch_videos': 'Watch Videos',
+                'download_forms': 'Download Forms',
+                'download_forms_desc': 'Access and download medical forms to complete offline before your visit.',
+                'download': 'Download',
+                'faq': 'Frequently Asked Questions',
+                'faq_1_q': 'How do I reset my password?',
+                'faq_1_a': 'Click on the "Forgot Password" link on the login page and follow the instructions sent to your email.',
+                'faq_2_q': 'Can I schedule appointments for family members?',
+                'faq_2_a': 'Yes, after creating your account, you can add family members and manage appointments for them.',
+                'faq_3_q': 'Is my medical information secure?',
+                'faq_3_a': 'Absolutely. We use industry-standard encryption and comply with all healthcare privacy regulations.',
+                'contact_title': 'Contact Us',
+                'contact_desc': 'We\'re here to help with any questions or concerns',
+                'call_us': 'Call Us',
+                'call_hours': 'Monday-Friday, 8am-6pm EST',
+                'email_us': 'Email Us',
+                'email_response': 'We typically respond within 24 hours',
+                'visit_us': 'Visit Us',
+                'find_kiosk': 'Find our kiosk locations',
+                'send_message': 'Send us a Message',
+                'subject': 'Subject',
+                'subject_placeholder': 'What is this regarding?',
+                'message': 'Message',
+                'message_placeholder': 'How can we help you?',
+                'appointment_type': 'Appointment Type',
+                'select_appointment_type': 'Select appointment type',
+                'general_consultation': 'General Consultation',
+                'follow_up': 'Follow-up Visit',
+                'specialist_consultation': 'Specialist Consultation',
+                'diagnostic_test': 'Diagnostic Test',
+                'preferred_date': 'Preferred Date',
+                'preferred_time': 'Preferred Time',
+                'select_time': 'Select time',
+                'notes': 'Notes (Optional)',
+                'notes_placeholder': 'Any specific concerns or details...',
+                'footer_mission': 'Providing accessible healthcare services through digital innovation.',
+                'quick_links': 'Quick Links',
+                'services': 'Services',
+                'form_submission': 'Form Submission',
+                'appointment_scheduling': 'Appointment Scheduling',
+                'kiosk_locations': 'Kiosk Locations',
+                'contact_us': 'Contact Us',
+                'footer_address': '123 Health St, Medical City',
+                'all_rights_reserved': 'All rights reserved.',
+                'privacy_policy': 'Privacy Policy',
+                'terms_of_use': 'Terms of Use'
+            },
+            'hi': {
+                'language': 'भाषा:',
+                'font_size': 'फ़ॉन्ट आकार:',
+                'mediconnect': 'मेडिकनेक्ट',
+                'home': 'होम',
+                'about_us': 'हमारे बारे में',
+                'resources': 'संसाधन',
+                'contact': 'संपर्क करें',
+                'login': 'लॉगिन',
+                'register': 'रजिस्टर',
+                'emergency': 'आपातकाल',
+                'hero_title': 'आपका स्वास्थ्य, हमारी प्राथमिकता',
+                'hero_description': 'चिकित्सा सेवाओं तक पहुंचें, फॉर्म जमा करें और सभी अपॉइंटमेंट एक ही जगह शेड्यूल करें।',
+                'submit_form': 'फॉर्म जमा करें',
+                'request_appointment': 'अपॉइंटमेंट अनुरोध',
+                'how_it_works': 'यह कैसे काम करता है',
+                'how_it_works_desc': 'आवश्यक स्वास्थ्य सेवाओं तक पहुंचने के सरल चरण',
+                'create_account': 'खाता बनाएं',
+                'create_account_desc': 'हमारी सेवाओं का उपयोग शुरू करने के लिए अपनी बुनियादी जानकारी के साथ पंजीकरण करें।',
+                'submit_forms': 'फॉर्म जमा करें',
+                'submit_forms_desc': 'मेडिकल फॉर्म ऑनलाइन भरें या मौजूदा दस्तावेज अपलोड करें।',
+                'schedule_appointment': 'अपॉइंटमेंट शेड्यूल करें',
+                'schedule_appointment_desc': 'अपनी सुविधानुसार स्वास्थ्य पेशेवरों के साथ अपॉइंटमेंट बुक करें।',
+                'our_services': 'हमारी सेवाएं',
+                'our_services_desc': 'आपकी आवश्यकताओं के अनुरूप व्यापक स्वास्थ्य देखभाल समाधान',
+                'medical_form_submission': 'मेडिकल फॉर्म सबमिश�

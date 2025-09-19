@@ -1,5 +1,5 @@
-/* Global Styles */
-:root {
+ /* Global Styles */
+ :root {
     --primary: #2a7de1;
     --secondary: #3bb4b8;
     --accent: #ff6b6b;
@@ -730,4 +730,3 @@ footer {
     .language-selector, .font-size-selector {
         margin: 10px 0;
     }
-}
